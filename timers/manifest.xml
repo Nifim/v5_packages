@@ -1,0 +1,16 @@
+<package>
+  <name>timers</name>
+  <version>0.1.0.0</version>
+  <type>addon</type>
+  <dependencies>
+    <dependency>set</dependency>
+    <dependency>list</dependency>
+    <dependency>party</dependency>
+    <dependency>player</dependency>
+    <dependency>packet</dependency>
+    <dependency>settings</dependency>
+    <dependency>treasure</dependency>
+    <dependency>equipment</dependency>
+    <dependency>resources</dependency>
+  </dependencies>
+</package>
