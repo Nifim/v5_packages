@@ -92,7 +92,7 @@ rules.spells[108] = function(modifiers, target) -- Regen
             [27057] = {type = 'addative', precedence = 0, value = 22}, -- Ebers Mitts +1
         },
         [slots.legs] = {
-            [28092] = {type = 'addative', precedence = 0, value = 18}, -- Theophany Pantaloons
+            [28092] = {type = 'addative', precedence = 0, value = 15}, -- Theophany Pantaloons
             [28113] = {type = 'addative', precedence = 0, value = 18}, -- Theophany Pantaloons +1
             [23243] = {type = 'addative', precedence = 0, value = 21}, -- Theophany Pantaloons +2
             [23578] = {type = 'addative', precedence = 0, value = 24}, -- Theophany Pantaloons +3
@@ -114,53 +114,52 @@ rules.spells[504] = rules.spells[108] -- Regen V
 
 rules.spells.skills[36] = function(modifiers, target, id) -- Enhancing Magic
     local prepentuance = 0
-    local estoqueur_count = 0
-    local nq_lethargy_count = 0
-    local hq_lethargy_count = 0
+    local rdm_empyrean_count = 0
     
     local gear = {
         [slots.main] = {
-            [22055] = {type = 'multiplcative', precedence = 1, value = 0.1}, -- Oranyan
+            [22055] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Oranyan
         },
         [slots.sub] = {
-            [26419] = {type = 'multiplcative', precedence = 1, value = 0.1}, -- Ammurapi Shield
+            [26419] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Ammurapi Shield
         },
         [slots.body] = {
-            [27891] = {type = 'multiplcative', precedence = 2, value = 0.09}, -- Shabti Cuirass
-            [27892] = {type = 'multiplcative', precedence = 2, value = 0.09}, -- Shabti Cuirass +1
+            [27891] = {type = 'multiplcative', precedence = 1, value = 0.09}, -- Shabti Cuirass
+            [27892] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Shabti Cuirass +1
         },
         [slots.hands] = {
-            [27947] = {type = 'multiplcative', precedence = 2, value = 0.15}, -- Atrophy Gloves
-            [27968] = {type = 'multiplcative', precedence = 2, value = 0.16}, -- Atrophy Gloves +1
-            [23178] = {type = 'multiplcative', precedence = 2, value = 0.18}, -- Atrophy Gloves +2
-            [23513] = {type = 'multiplcative', precedence = 2, value = 0.20}, -- Atrophy Gloves +3
-            [28034] = {type = 'multiplcative', precedence = 2, value = 0.05}, -- Dynasty Mitts
+            [27947] = {type = 'multiplcative', precedence = 1, value = 0.15}, -- Atrophy Gloves
+            [27968] = {type = 'multiplcative', precedence = 1, value = 0.16}, -- Atrophy Gloves +1
+            [23178] = {type = 'multiplcative', precedence = 1, value = 0.18}, -- Atrophy Gloves +2
+            [23513] = {type = 'multiplcative', precedence = 1, value = 0.20}, -- Atrophy Gloves +3
+            [28034] = {type = 'multiplcative', precedence = 1, value = 0.05}, -- Dynasty Mitts
         },
         [slots.legs] = {
-            [27194] = {type = 'multiplcative', precedence = 2, value = 0.1}, -- Futhark Trousers
-            [27195] = {type = 'multiplcative', precedence = 2, value = 0.2}, -- Futhark Trousers +1
+            [27194] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Futhark Trousers
+            [27195] = {type = 'multiplcative', precedence = 1, value = 0.20}, -- Futhark Trousers +1
+            [23285] = {type = 'multiplcative', precedence = 1, value = 0.25}, -- Futhark Trousers +2
+            [23620] = {type = 'multiplcative', precedence = 1, value = 0.30}, -- Futhark Trousers +3
         },
         [slots.feet] = {
-            [11248] = {type = 'multiplcative', precedence = 2, value = 0.10}, -- Estoqueur's Houseaux +1
-            [11148] = {type = 'multiplcative', precedence = 2, value = 0.20}, -- Estoqueur's Houseaux +2
-            [27419] = {type = 'multiplcative', precedence = 2, value = 0.25}, -- Lethargy Houseaux
-            [27420] = {type = 'multiplcative', precedence = 2, value = 0.30}, -- Lethargy Houseaux +1
-            [23310] = {type = 'multiplcative', precedence = 2, value = 0.05}, -- Theo. Duckbills +2
-            [23645] = {type = 'multiplcative', precedence = 2, value = 0.10}, -- Theo. Duckbills +3
+            [11248] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Estoqueur's Houseaux +1
+            [11148] = {type = 'multiplcative', precedence = 1, value = 0.20}, -- Estoqueur's Houseaux +2
+            [27419] = {type = 'multiplcative', precedence = 1, value = 0.25}, -- Lethargy Houseaux
+            [27420] = {type = 'multiplcative', precedence = 1, value = 0.30}, -- Lethargy Houseaux +1
+            [23310] = {type = 'multiplcative', precedence = 1, value = 0.05}, -- Theo. Duckbills +2
+            [23645] = {type = 'multiplcative', precedence = 1, value = 0.10}, -- Theo. Duckbills +3
         },
         [slots.back] = {
-            [16204] = {type = 'multiplcative', precedence = 2, value = 0.1}, -- Estoqueur's Cape
-            [26250] = {type = 'multiplcative', precedence = 2, value = 0.2}, -- Sucellos's Cape
+            [16204] = {type = 'multiplcative', precedence = 1, value = 0.1}, -- Estoqueur's Cape
+            [26250] = {type = 'multiplcative', precedence = 1, value = 0.2}, -- Sucellos's Cape
         },
     }
     {11068, 26748, 26749, 26782, 26783}
     buffs = {
-        [469] = {type = 'multiplcative', precedence = 2, value = 0.10},
-        [534] = {type = 'multiplcative', precedence = 2, value = 0.10},
-        [469] = {type = 'multiplcative', precedence = 2, value = 0.10},
+        [469] = {type = 'multiplcative', precedence = 2, value = 2}, -- Perpetuance Term needs checking with some weird combos of JA/Gifts
+        [534] = {type = 'multiplcative', precedence = 4, value = -0.50}, -- Embolden Term needs to be verified.
     }
     if id ~- 40 and id ~= 41 then
-        buffs[419] = {type = 'multiplcative', precedence = 2, value = 0.10}, 
+        buffs[419] = {type = 'multiplcative', precedence = 2, value = 3}, -- Composure
     end
 end
 
@@ -208,6 +207,6 @@ items[10690] = { -- Warrior's Mufflers +2
 }
 items[26894] = {
     spells = {
-        [108] = {type = 'addative', precedence = 0, value = 15},
+        [108] = {type = 'addative', precedence = 0, value = 12},
     },
 }
