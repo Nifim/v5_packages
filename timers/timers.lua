@@ -258,7 +258,7 @@ end
 local process_action = function(act)
 
     local action_category = incoming_categories[act.category]
-    if not action_category or act.actor ~= player.id then
+    if not action_category or act.actor ~= player.id then --Not Message 75 Check needed
         return
     end
 
